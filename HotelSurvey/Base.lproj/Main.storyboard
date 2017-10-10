@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,10 +31,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5RG-0a-WT7">
+                                <rect key="frame" x="350" y="333.5" width="0.0" height="0.0"/>
+                                <color key="pageIndicatorTintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5RG-0a-WT7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="N4w-E7-uw8"/>
                             <constraint firstAttribute="bottom" secondItem="Sms-9E-9hK" secondAttribute="bottom" id="Tm3-Nm-WTq"/>
+                            <constraint firstAttribute="trailing" secondItem="5RG-0a-WT7" secondAttribute="centerX" constant="25" id="dPy-zH-Mjg"/>
                             <constraint firstItem="Sms-9E-9hK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fuv-ig-2xK"/>
                             <constraint firstItem="Sms-9E-9hK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h9l-Lk-7Gf"/>
                             <constraint firstAttribute="trailing" secondItem="Sms-9E-9hK" secondAttribute="trailing" id="pGB-RH-ZLv"/>
@@ -51,6 +59,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pageControl" destination="5RG-0a-WT7" id="DYY-ZO-6Yd"/>
                         <outlet property="pagingView" destination="Sms-9E-9hK" id="ccx-9e-qIl"/>
                         <outlet property="spinner" destination="1tE-02-yaz" id="UbZ-WT-KGr"/>
                     </connections>

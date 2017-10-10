@@ -15,9 +15,21 @@ class HomeViewController: UIViewController, StoryboardHandler {
 
     @IBOutlet weak var spinner:UIActivityIndicatorView!
     @IBOutlet weak var pagingView:UIView!
+    @IBOutlet weak var pageControl:UIPageControl!
 
     fileprivate let homeInteractor:HomeInteractor = HomeInteractor()
-    fileprivate var surveyData:[HotelSurvey] = []
+    fileprivate var surveyData:[HotelSurvey] = [] {
+        didSet {
+            if surveyData.count > 0 {
+                self.pageControl.isHidden = false
+                self.pageControl.numberOfPages = surveyData.count
+                self.navigationController?.navigationBar.isHidden = false
+            } else {
+                self.pageControl.isHidden = true
+                self.navigationController?.navigationBar.isHidden = true
+            }
+        }
+    }
     fileprivate var pageViewController:UIPageViewController!
 
     override func viewDidLoad() {
@@ -25,12 +37,14 @@ class HomeViewController: UIViewController, StoryboardHandler {
         self.setNavigationBar()
         self.homeInteractor.surveyDetailDelegate = self
         self.checkSessionAvailability()
+        self.pageControl.transform = CGAffineTransform(rotationAngle: .pi/2)
     }
 
     @IBAction func reloadButtonTapped(_ sender: Any) {
         for view in self.pagingView.subviews {
             view.removeFromSuperview()
         }
+        self.surveyData.removeAll()
         self.checkSessionAvailability()
     }
     //MARK: - Helper's
@@ -39,6 +53,7 @@ class HomeViewController: UIViewController, StoryboardHandler {
         self.title = "SURVEYS"
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     fileprivate func checkSessionAvailability() {
@@ -78,27 +93,33 @@ extension HomeViewController: UIPageViewControllerDataSource , UIPageViewControl
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        var index = (viewController as! HomeContentViewController).pageIndex
-        
-        if index == 0 || index == nil {
-            return nil
+        if var index = (viewController as? HomeContentViewController)?.pageIndex, index > 0  {
+            index = index - 1
+            return viewControllerAtIndex(index:index)
         }
-        index = index! - 1
-        return viewControllerAtIndex(index:index!)
+        
+        return nil
         
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! HomeContentViewController).pageIndex
+        if var index = (viewController as? HomeContentViewController)?.pageIndex {
+            index = index + 1
+            if index == self.surveyData.count {
+                return nil
+            }
+            return viewControllerAtIndex(index:index)
+        }
+        return nil
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
-        if index == nil {
-            return nil
+        if finished == true {
+            if let vc = pageViewController.viewControllers?.first as? HomeContentViewController {
+                self.pageControl.currentPage = vc.pageIndex ?? 0
+            }
         }
-        index = index! + 1
-        if index == self.surveyData.count {
-            return nil
-        }
-        return viewControllerAtIndex(index:index!)
     }
 }
 
