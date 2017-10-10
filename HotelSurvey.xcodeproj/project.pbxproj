@@ -14,6 +14,12 @@
 		A860A82F1F8BD62000C53F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A860A82D1F8BD62000C53F73 /* LaunchScreen.storyboard */; };
 		A860A8401F8BD6D500C53F73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860A83F1F8BD6D500C53F73 /* HomeViewController.swift */; };
 		A860A8431F8BD6E800C53F73 /* HomeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860A8421F8BD6E800C53F73 /* HomeContentViewController.swift */; };
+		A8A6EC3C1F8CA2E900974745 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC3B1F8CA2E900974745 /* APIBuilder.swift */; };
+		A8A6EC3E1F8CA35A00974745 /* URLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC3D1F8CA35A00974745 /* URLList.swift */; };
+		A8A6EC411F8CA60900974745 /* SurveyDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC401F8CA60900974745 /* SurveyDetailAPI.swift */; };
+		A8A6EC431F8CA6EA00974745 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC421F8CA6EA00974745 /* Globals.swift */; };
+		A8A6EC451F8CAA3800974745 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC441F8CAA3800974745 /* NetworkWrapper.swift */; };
+		A8A6EC471F8CAD7D00974745 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC461F8CAD7D00974745 /* HomeInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		A860A8301F8BD62000C53F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A860A83F1F8BD6D500C53F73 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A860A8421F8BD6E800C53F73 /* HomeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentViewController.swift; sourceTree = "<group>"; };
+		A8A6EC3B1F8CA2E900974745 /* APIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
+		A8A6EC3D1F8CA35A00974745 /* URLList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLList.swift; sourceTree = "<group>"; };
+		A8A6EC401F8CA60900974745 /* SurveyDetailAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyDetailAPI.swift; sourceTree = "<group>"; };
+		A8A6EC421F8CA6EA00974745 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		A8A6EC441F8CAA3800974745 /* NetworkWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
+		A8A6EC461F8CAD7D00974745 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		AE87B6E6A811513BE4D47A27 /* Pods_HotelSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71D01E20CDBBFE9640766D9 /* Pods-HotelSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +95,7 @@
 				A860A8371F8BD65000C53F73 /* User Interface */,
 				A860A8381F8BD65F00C53F73 /* Business Logic */,
 				A860A83A1F8BD67600C53F73 /* Utils */,
+				A8A6EC3A1F8CA29800974745 /* Network */,
 				A860A8391F8BD66900C53F73 /* Models */,
 				A860A83B1F8BD67F00C53F73 /* SharedGlobal */,
 			);
@@ -101,6 +114,7 @@
 		A860A8381F8BD65F00C53F73 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6EC461F8CAD7D00974745 /* HomeInteractor.swift */,
 			);
 			name = "Business Logic";
 			sourceTree = "<group>";
@@ -115,6 +129,7 @@
 		A860A83A1F8BD67600C53F73 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6EC421F8CA6EA00974745 /* Globals.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -145,6 +160,25 @@
 				A860A8421F8BD6E800C53F73 /* HomeContentViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A8A6EC3A1F8CA29800974745 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A8A6EC3F1F8CA5EC00974745 /* API's */,
+				A8A6EC3B1F8CA2E900974745 /* APIBuilder.swift */,
+				A8A6EC3D1F8CA35A00974745 /* URLList.swift */,
+				A8A6EC441F8CAA3800974745 /* NetworkWrapper.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		A8A6EC3F1F8CA5EC00974745 /* API's */ = {
+			isa = PBXGroup;
+			children = (
+				A8A6EC401F8CA60900974745 /* SurveyDetailAPI.swift */,
+			);
+			name = "API's";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A6EC3C1F8CA2E900974745 /* APIBuilder.swift in Sources */,
 				A860A8431F8BD6E800C53F73 /* HomeContentViewController.swift in Sources */,
+				A8A6EC451F8CAA3800974745 /* NetworkWrapper.swift in Sources */,
+				A8A6EC3E1F8CA35A00974745 /* URLList.swift in Sources */,
 				A860A8251F8BD62000C53F73 /* AppDelegate.swift in Sources */,
 				A860A8401F8BD6D500C53F73 /* HomeViewController.swift in Sources */,
+				A8A6EC471F8CAD7D00974745 /* HomeInteractor.swift in Sources */,
+				A8A6EC431F8CA6EA00974745 /* Globals.swift in Sources */,
+				A8A6EC411F8CA60900974745 /* SurveyDetailAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +488,7 @@
 				A860A8351F8BD62000C53F73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

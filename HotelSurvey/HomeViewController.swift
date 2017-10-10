@@ -10,10 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    fileprivate let homeInteractor:HomeInteractor = HomeInteractor()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        homeInteractor.getSurveyDetailData(page: 1, perPage: 10)
     }
 
     override func didReceiveMemoryWarning() {
