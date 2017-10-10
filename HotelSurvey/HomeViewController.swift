@@ -27,6 +27,12 @@ class HomeViewController: UIViewController, StoryboardHandler {
         self.checkSessionAvailability()
     }
 
+    @IBAction func reloadButtonTapped(_ sender: Any) {
+        for view in self.pagingView.subviews {
+            view.removeFromSuperview()
+        }
+        self.checkSessionAvailability()
+    }
     //MARK: - Helper's
     
     func setNavigationBar() {

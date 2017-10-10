@@ -42,6 +42,9 @@
                     <navigationItem key="navigationItem" id="mCP-wF-Sxo">
                         <barButtonItem key="leftBarButtonItem" title="Reload" id="fIV-ss-DYe">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" id="9fB-Gs-JZ8"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Menu" id="ZIf-O4-0lT">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
