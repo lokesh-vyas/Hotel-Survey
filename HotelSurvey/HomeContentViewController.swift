@@ -7,29 +7,27 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class HomeContentViewController: UIViewController {
+class HomeContentViewController: UIViewController, StoryboardHandler {
+
+    //MARK: - StoryboardHandler variables
+    static var storyboardName = Storyboards.home
+    
+    @IBOutlet weak var hotelCoverImageview:UIImageView!
+    @IBOutlet weak var hotelNameLabel:UILabel!
+    @IBOutlet weak var hotelDescriptionLabel:UILabel!
+
+    
+    var pageIndex:Int?
+    var hotelSurvey:HotelSurvey?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let url = URL.init(string: hotelSurvey?.coverImageUrl ?? "") {
+            self.hotelCoverImageview.af_setImage(withURL:url, placeholderImage: nil, imageTransition: .crossDissolve(0.3))
+        }
+        self.hotelNameLabel.text = self.hotelSurvey?.title ?? ""
+        self.hotelDescriptionLabel.text = self.hotelSurvey?.description ?? ""
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
