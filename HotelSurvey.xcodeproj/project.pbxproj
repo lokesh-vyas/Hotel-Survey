@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46D5791572D83CF1092D140F /* Pods_HotelSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE87B6E6A811513BE4D47A27 /* Pods_HotelSurvey.framework */; };
 		A860A8251F8BD62000C53F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860A8241F8BD62000C53F73 /* AppDelegate.swift */; };
 		A860A82A1F8BD62000C53F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A860A8281F8BD62000C53F73 /* Main.storyboard */; };
 		A860A82C1F8BD62000C53F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A860A82B1F8BD62000C53F73 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		962B0C97994EBF4824365497 /* Pods-HotelSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		A860A8211F8BD62000C53F73 /* HotelSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A860A8241F8BD62000C53F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A860A8291F8BD62000C53F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		A860A8301F8BD62000C53F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A860A83F1F8BD6D500C53F73 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A860A8421F8BD6E800C53F73 /* HomeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentViewController.swift; sourceTree = "<group>"; };
+		AE87B6E6A811513BE4D47A27 /* Pods_HotelSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71D01E20CDBBFE9640766D9 /* Pods-HotelSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D5791572D83CF1092D140F /* Pods_HotelSurvey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31D1ABF5A6B6B8BA7EA56DA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE87B6E6A811513BE4D47A27 /* Pods_HotelSurvey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		397B75830CE8CB592214AEBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C71D01E20CDBBFE9640766D9 /* Pods-HotelSurvey.debug.xcconfig */,
+				962B0C97994EBF4824365497 /* Pods-HotelSurvey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A860A8181F8BD62000C53F73 = {
 			isa = PBXGroup;
 			children = (
 				A860A8231F8BD62000C53F73 /* HotelSurvey */,
 				A860A8221F8BD62000C53F73 /* Products */,
+				397B75830CE8CB592214AEBD /* Pods */,
+				31D1ABF5A6B6B8BA7EA56DA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A860A8331F8BD62000C53F73 /* Build configuration list for PBXNativeTarget "HotelSurvey" */;
 			buildPhases = (
+				52380EED4A643B533BCC7A92 /* [CP] Check Pods Manifest.lock */,
 				A860A81D1F8BD62000C53F73 /* Sources */,
 				A860A81E1F8BD62000C53F73 /* Frameworks */,
 				A860A81F1F8BD62000C53F73 /* Resources */,
+				C0721D5C1327BA49C4250DBA /* [CP] Embed Pods Frameworks */,
+				4A2AB9AE80FD5B54A8392049 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,6 +216,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A2AB9AE80FD5B54A8392049 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52380EED4A643B533BCC7A92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotelSurvey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0721D5C1327BA49C4250DBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A860A81D1F8BD62000C53F73 /* Sources */ = {
@@ -318,6 +405,7 @@
 		};
 		A860A8341F8BD62000C53F73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C71D01E20CDBBFE9640766D9 /* Pods-HotelSurvey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HotelSurvey/Info.plist;
@@ -330,6 +418,7 @@
 		};
 		A860A8351F8BD62000C53F73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 962B0C97994EBF4824365497 /* Pods-HotelSurvey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HotelSurvey/Info.plist;
