@@ -12,6 +12,7 @@ import UIKit
 
 enum Storyboards : String {
     case home = "Main"
+    case homeDetail = "HotelDetail"
 }
 
 protocol StoryboardHandler : NSObjectProtocol {

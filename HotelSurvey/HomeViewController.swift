@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, StoryboardHandler {
                 self.pageControl.numberOfPages = surveyData.count
                 self.navigationController?.navigationBar.isHidden = false
             } else {
+                self.pageControl.currentPage = 0
                 self.pageControl.isHidden = true
                 self.navigationController?.navigationBar.isHidden = true
             }
@@ -47,6 +48,7 @@ class HomeViewController: UIViewController, StoryboardHandler {
         self.surveyData.removeAll()
         self.checkSessionAvailability()
     }
+    
     //MARK: - Helper's
     
     func setNavigationBar() {
@@ -83,6 +85,7 @@ class HomeViewController: UIViewController, StoryboardHandler {
         let homeContentViewController = UIStoryboard.instantiateViewController() as HomeContentViewController
         homeContentViewController.pageIndex = index
         homeContentViewController.hotelSurvey = self.surveyData[index]
+        homeContentViewController.hotelSelectionDelegate = self
         return homeContentViewController
         
     }
@@ -143,5 +146,13 @@ extension HomeViewController : SurveyDetailProtocol {
         } else {
             DialogManager.sharedInstance.showAlert(onViewController: self, withText: "HotelSurvey", withMessage: error ?? "")
         }
+    }
+}
+
+extension HomeViewController : HotelSelectionProtocol {
+    func didHotelSelected(hotelSurvey:HotelSurvey) {
+        let hotelDetailVC = UIStoryboard.instantiateViewController() as HotelDetailViewController
+        hotelDetailVC.hotelName = hotelSurvey.title ?? ""
+        self.navigationController?.pushViewController(hotelDetailVC, animated: true)
     }
 }

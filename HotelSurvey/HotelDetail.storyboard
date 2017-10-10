@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hotel Detail View Controller-->
+        <scene sceneID="GnE-8f-9nK">
+            <objects>
+                <viewController storyboardIdentifier="HotelDetailViewController" id="aZs-uv-aFB" customClass="HotelDetailViewController" customModule="HotelSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uyf-F4-Nac"/>
+                        <viewControllerLayoutGuide type="bottom" id="hEu-qo-xwU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Que-XL-3Cv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52T-2a-qBg">
+                                <rect key="frame" x="110" y="120" width="155.5" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.1479573109" green="0.28478161759999998" blue="0.73372040670000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLL-Z9-L8g">
+                                <rect key="frame" x="41" y="156" width="293" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="y55-qs-k0M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.14795731089679454" green="0.28478161759678289" blue="0.73372040665829119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rLL-Z9-L8g" firstAttribute="top" secondItem="52T-2a-qBg" secondAttribute="bottom" constant="15" id="9iM-oL-leL"/>
+                            <constraint firstItem="rLL-Z9-L8g" firstAttribute="leading" secondItem="Que-XL-3Cv" secondAttribute="leadingMargin" constant="25" id="mGD-Fu-eV7"/>
+                            <constraint firstItem="52T-2a-qBg" firstAttribute="centerX" secondItem="Que-XL-3Cv" secondAttribute="centerX" id="rhX-UH-S2x"/>
+                            <constraint firstItem="52T-2a-qBg" firstAttribute="top" secondItem="Uyf-F4-Nac" secondAttribute="bottom" constant="100" id="ufg-91-teo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rLL-Z9-L8g" secondAttribute="trailing" constant="25" id="vuN-tG-nbA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hotelNameLabel" destination="rLL-Z9-L8g" id="VTp-L8-a1c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPy-kS-vKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="184"/>
+        </scene>
+    </scenes>
+</document>

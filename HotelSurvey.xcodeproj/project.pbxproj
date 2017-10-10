@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		46D5791572D83CF1092D140F /* Pods_HotelSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE87B6E6A811513BE4D47A27 /* Pods_HotelSurvey.framework */; };
+		A83E1FDC1F8D1E6B00A994E8 /* HotelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83E1FDB1F8D1E6B00A994E8 /* HotelDetail.storyboard */; };
+		A83E1FDE1F8D1F5500A994E8 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E1FDD1F8D1F5500A994E8 /* HotelDetailViewController.swift */; };
 		A860A8251F8BD62000C53F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860A8241F8BD62000C53F73 /* AppDelegate.swift */; };
 		A860A82A1F8BD62000C53F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A860A8281F8BD62000C53F73 /* Main.storyboard */; };
 		A860A82C1F8BD62000C53F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A860A82B1F8BD62000C53F73 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		962B0C97994EBF4824365497 /* Pods-HotelSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey.release.xcconfig"; sourceTree = "<group>"; };
+		A83E1FDB1F8D1E6B00A994E8 /* HotelDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HotelDetail.storyboard; sourceTree = "<group>"; };
+		A83E1FDD1F8D1F5500A994E8 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
 		A860A8211F8BD62000C53F73 /* HotelSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A860A8241F8BD62000C53F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A860A8291F8BD62000C53F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				A860A8281F8BD62000C53F73 /* Main.storyboard */,
+				A83E1FDB1F8D1E6B00A994E8 /* HotelDetail.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			children = (
 				A860A83F1F8BD6D500C53F73 /* HomeViewController.swift */,
 				A860A8421F8BD6E800C53F73 /* HomeContentViewController.swift */,
+				A83E1FDD1F8D1F5500A994E8 /* HotelDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83E1FDC1F8D1E6B00A994E8 /* HotelDetail.storyboard in Resources */,
 				A860A82F1F8BD62000C53F73 /* LaunchScreen.storyboard in Resources */,
 				A860A82C1F8BD62000C53F73 /* Assets.xcassets in Resources */,
 				A860A82A1F8BD62000C53F73 /* Main.storyboard in Resources */,
@@ -351,6 +358,7 @@
 				A860A8251F8BD62000C53F73 /* AppDelegate.swift in Sources */,
 				A860A8401F8BD6D500C53F73 /* HomeViewController.swift in Sources */,
 				A8A6EC471F8CAD7D00974745 /* HomeInteractor.swift in Sources */,
+				A83E1FDE1F8D1F5500A994E8 /* HotelDetailViewController.swift in Sources */,
 				A8A6EC431F8CA6EA00974745 /* Globals.swift in Sources */,
 				A8A6EC411F8CA60900974745 /* SurveyDetailAPI.swift in Sources */,
 			);

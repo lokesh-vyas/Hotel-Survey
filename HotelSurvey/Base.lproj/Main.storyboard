@@ -112,6 +112,9 @@
                                 <state key="normal" title="Take the Survey">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="takeToSurveyTapped:" destination="mLo-qC-lfH" eventType="touchUpInside" id="W34-s7-Kag"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
