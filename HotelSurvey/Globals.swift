@@ -14,6 +14,7 @@ struct GlobalVariables {
     
     static var networkError:String = "Sorry! Something is not here. Try again later."
     
+    //MARK: - Session Data
     struct Session {
         static var authToken:String {
             get {

@@ -13,11 +13,14 @@ class HomeViewController: UIViewController, StoryboardHandler {
     //MARK: - StoryboardHandler variables
     static var storyboardName = Storyboards.home
 
+    //MARK: - Connections
     @IBOutlet weak var spinner:UIActivityIndicatorView!
     @IBOutlet weak var pagingView:UIView!
     @IBOutlet weak var pageControl:UIPageControl!
 
+    //MARK: - iVars
     fileprivate let homeInteractor:HomeInteractor = HomeInteractor()
+    fileprivate var pageViewController:UIPageViewController!
     fileprivate var surveyData:[HotelSurvey] = [] {
         didSet {
             if surveyData.count > 0 {
@@ -31,8 +34,9 @@ class HomeViewController: UIViewController, StoryboardHandler {
             }
         }
     }
-    fileprivate var pageViewController:UIPageViewController!
 
+    
+    //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
@@ -41,6 +45,8 @@ class HomeViewController: UIViewController, StoryboardHandler {
         self.pageControl.transform = CGAffineTransform(rotationAngle: .pi/2)
     }
 
+    
+    //MARK: - Action Method's
     @IBAction func reloadButtonTapped(_ sender: Any) {
         for view in self.pagingView.subviews {
             view.removeFromSuperview()
@@ -49,8 +55,8 @@ class HomeViewController: UIViewController, StoryboardHandler {
         self.checkSessionAvailability()
     }
     
-    //MARK: - Helper's
     
+    //MARK: - Helper's
     func setNavigationBar() {
         self.title = "SURVEYS"
         navigationController?.navigationBar.tintColor = .white
@@ -68,6 +74,7 @@ class HomeViewController: UIViewController, StoryboardHandler {
     }
     
     
+    //MARK: - Pagination Method's
     fileprivate func setupPagination() {
         let startVC = self.viewControllerAtIndex(index: 0)
         let vc = [startVC]

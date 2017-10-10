@@ -17,12 +17,12 @@ protocol SurveyDetailProtocol {
 
 class HomeInteractor {
     
-    
+    //MARK: - iVars
     fileprivate let networkWrapper = NetworkWrapper.sharedInstance
     var surveyDetailDelegate:SurveyDetailProtocol?
     
     
-    
+    //MARK: - Network Call's
     func getSurveyDetailData(page:Int, perPage:Int) {
         
         networkWrapper.getSurveyDetailData(page: page, perPage: perPage, onSuccess: { (dict) in
