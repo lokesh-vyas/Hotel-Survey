@@ -13,13 +13,18 @@ import ObjectMapper
 class HomeInteractor {
     
     fileprivate let networkWrapper = NetworkWrapper.sharedInstance
-
+    
     func getSurveyDetailData(page:Int, perPage:Int) {
         
         networkWrapper.getSurveyDetailData(page: page, perPage: perPage, onSuccess: { (dict) in
             
-            let json = JSON(dict).arrayValue
-            print(json)
+            if let json = JSON(dict).arrayObject {
+                print(json)
+                if let survey = Mapper<HotelSurvey>().mapArray(JSONObject: json) {
+                    print(survey.first?.coverImageUrl ?? "")
+                }
+            }
+            
             
         }) { (error) in
             print(error)

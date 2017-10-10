@@ -20,6 +20,7 @@
 		A8A6EC431F8CA6EA00974745 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC421F8CA6EA00974745 /* Globals.swift */; };
 		A8A6EC451F8CAA3800974745 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC441F8CAA3800974745 /* NetworkWrapper.swift */; };
 		A8A6EC471F8CAD7D00974745 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC461F8CAD7D00974745 /* HomeInteractor.swift */; };
+		A8A6EC491F8CB1A900974745 /* HotelSurveyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC481F8CB1A900974745 /* HotelSurveyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A8A6EC421F8CA6EA00974745 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		A8A6EC441F8CAA3800974745 /* NetworkWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
 		A8A6EC461F8CAD7D00974745 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		A8A6EC481F8CB1A900974745 /* HotelSurveyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSurveyData.swift; sourceTree = "<group>"; };
 		AE87B6E6A811513BE4D47A27 /* Pods_HotelSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71D01E20CDBBFE9640766D9 /* Pods-HotelSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 		A860A8391F8BD66900C53F73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6EC481F8CB1A900974745 /* HotelSurveyData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				A8A6EC3C1F8CA2E900974745 /* APIBuilder.swift in Sources */,
 				A860A8431F8BD6E800C53F73 /* HomeContentViewController.swift in Sources */,
+				A8A6EC491F8CB1A900974745 /* HotelSurveyData.swift in Sources */,
 				A8A6EC451F8CAA3800974745 /* NetworkWrapper.swift in Sources */,
 				A8A6EC3E1F8CA35A00974745 /* URLList.swift in Sources */,
 				A860A8251F8BD62000C53F73 /* AppDelegate.swift in Sources */,
