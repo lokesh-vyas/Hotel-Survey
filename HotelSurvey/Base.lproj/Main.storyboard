@@ -39,7 +39,14 @@
                             <constraint firstAttribute="trailing" secondItem="Sms-9E-9hK" secondAttribute="trailing" id="pGB-RH-ZLv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mCP-wF-Sxo"/>
+                    <navigationItem key="navigationItem" id="mCP-wF-Sxo">
+                        <barButtonItem key="leftBarButtonItem" title="Reload" id="fIV-ss-DYe">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="ZIf-O4-0lT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pagingView" destination="Sms-9E-9hK" id="ccx-9e-qIl"/>
                         <outlet property="spinner" destination="1tE-02-yaz" id="UbZ-WT-KGr"/>
