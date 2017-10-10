@@ -82,12 +82,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-2R-SUl">
-                                <rect key="frame" x="122.5" y="549" width="130" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-2R-SUl" customClass="RoundButton" customModule="HotelSurvey" customModuleProvider="target">
+                                <rect key="frame" x="112.5" y="567" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.7803921568627451" green="0.13725490196078433" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="G2M-ZI-X3S"/>
-                                    <constraint firstAttribute="height" constant="38" id="IJe-gM-0oG"/>
+                                    <constraint firstAttribute="width" constant="150" id="G2M-ZI-X3S"/>
+                                    <constraint firstAttribute="height" constant="40" id="IJe-gM-0oG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Take the Survey">
@@ -104,7 +104,7 @@
                             <constraint firstItem="bta-v5-CFx" firstAttribute="trailing" secondItem="uCg-hh-tqS" secondAttribute="trailing" id="KNC-w2-83b"/>
                             <constraint firstItem="SCN-9r-0it" firstAttribute="top" secondItem="SWr-og-BA8" secondAttribute="top" id="LKh-uM-4eg"/>
                             <constraint firstAttribute="trailing" secondItem="SCN-9r-0it" secondAttribute="trailing" id="LXk-tu-4WO"/>
-                            <constraint firstItem="fId-JU-fcy" firstAttribute="top" secondItem="SWR-2R-SUl" secondAttribute="bottom" constant="80" id="NiJ-oM-M6K"/>
+                            <constraint firstItem="fId-JU-fcy" firstAttribute="top" secondItem="SWR-2R-SUl" secondAttribute="bottom" constant="60" id="NiJ-oM-M6K"/>
                             <constraint firstItem="bta-v5-CFx" firstAttribute="top" secondItem="uCg-hh-tqS" secondAttribute="bottom" constant="10" id="QVt-y4-V8c"/>
                             <constraint firstAttribute="trailing" secondItem="uCg-hh-tqS" secondAttribute="trailing" constant="30" id="Umh-AN-87D"/>
                             <constraint firstItem="SCN-9r-0it" firstAttribute="leading" secondItem="SWr-og-BA8" secondAttribute="leading" id="Ybe-mi-5QC"/>

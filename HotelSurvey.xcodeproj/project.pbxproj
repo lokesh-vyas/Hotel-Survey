@@ -24,6 +24,7 @@
 		A8A6EC4B1F8CCBC400974745 /* OAuthTokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC4A1F8CCBC400974745 /* OAuthTokenAPI.swift */; };
 		A8A6EC4D1F8CD68000974745 /* DialogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC4C1F8CD68000974745 /* DialogManager.swift */; };
 		A8A6EC551F8CDDDE00974745 /* StoryboardInstantiateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC541F8CDDDE00974745 /* StoryboardInstantiateHandler.swift */; };
+		A8A6EC5E1F8CF84000974745 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6EC5D1F8CF84000974745 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A8A6EC4A1F8CCBC400974745 /* OAuthTokenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthTokenAPI.swift; sourceTree = "<group>"; };
 		A8A6EC4C1F8CD68000974745 /* DialogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogManager.swift; sourceTree = "<group>"; };
 		A8A6EC541F8CDDDE00974745 /* StoryboardInstantiateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiateHandler.swift; sourceTree = "<group>"; };
+		A8A6EC5D1F8CF84000974745 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		AE87B6E6A811513BE4D47A27 /* Pods_HotelSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71D01E20CDBBFE9640766D9 /* Pods-HotelSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelSurvey/Pods-HotelSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 				A8A6EC421F8CA6EA00974745 /* Globals.swift */,
 				A8A6EC4C1F8CD68000974745 /* DialogManager.swift */,
 				A8A6EC541F8CDDDE00974745 /* StoryboardInstantiateHandler.swift */,
+				A8A6EC5D1F8CF84000974745 /* RoundButton.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				A8A6EC4B1F8CCBC400974745 /* OAuthTokenAPI.swift in Sources */,
 				A8A6EC4D1F8CD68000974745 /* DialogManager.swift in Sources */,
+				A8A6EC5E1F8CF84000974745 /* RoundButton.swift in Sources */,
 				A8A6EC3C1F8CA2E900974745 /* APIBuilder.swift in Sources */,
 				A860A8431F8BD6E800C53F73 /* HomeContentViewController.swift in Sources */,
 				A8A6EC491F8CB1A900974745 /* HotelSurveyData.swift in Sources */,
