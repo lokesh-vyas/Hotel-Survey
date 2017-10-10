@@ -24,4 +24,19 @@ class APIBuilder {
         }
         return (apiObject, params)
     }
+    
+    static func buildOAuthAPI(username:String, password:String) -> (OAuthTokenAPI, [String:Any]?) {
+        let apiObject = OAuthTokenAPI(username:username, password:password)
+        
+        var params: [String:Any]? {
+            do {
+                let temp = try apiObject.buildAPIParameter()
+                return temp!
+            } catch {
+                print("Error building OAuth Params")
+                return nil
+            }
+        }
+        return (apiObject, params)
+    }
 }

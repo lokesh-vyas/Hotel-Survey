@@ -8,8 +8,48 @@
 
 import Foundation
 
+let USER_DEFAULTS = UserDefaults.standard
+
 struct GlobalVariables {
-    static var accessToken: String = "ce454691e0ee41b2dfd88eb12de8178e15cd3fe9e1c1a73056b25ee9ecc7613b"
+    
+    static var networkError:String = "Sorry! Something is not here. Try again later."
+    
+    struct Session {
+        static var authToken:String {
+            get {
+                if let type = USER_DEFAULTS.value(forKey: UserDefaultsKeys.Session.authToken.rawValue) as? String {
+                    return type
+                } else {
+                    return ""
+                }
+            }
+            
+            set(value) {
+                
+                if value.isEmpty {
+                    USER_DEFAULTS.removeObject(forKey: UserDefaultsKeys.Session.authToken.rawValue)
+                } else {
+                    USER_DEFAULTS.set(value, forKey: UserDefaultsKeys.Session.authToken.rawValue)
+                }
+                USER_DEFAULTS.synchronize()
+            }
+        }
+        
+        static func clear() {
+            Session.authToken = ""
+        }
+    }
+    
+    
+}
+
+enum UserDefaultsKeys {
+    
+    // MARK:- Session Data
+    enum Session:String {
+        case authToken = "authToken"
+        
+    }
 }
 
 enum GenericErrors: Error{

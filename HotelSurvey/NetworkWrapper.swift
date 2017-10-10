@@ -25,6 +25,11 @@ class NetworkWrapper {
         let (apiBuilder, params) = APIBuilder.buildSurveyDetailAPI(page:page, perPage:perPage)
         restClient.request(apiBuilder.getMethod(), urlString: apiBuilder.getUrl(), parameters: params, onSuccess: onSuccess, onFailure: onFailure)
     }
+    
+    func getOAuthData(username:String, password:String, onSuccess:@escaping (Any)->(), onFailure:@escaping (String)->() ) {
+        let (apiBuilder, params) = APIBuilder.buildOAuthAPI(username:username, password:password)
+        restClient.request(apiBuilder.getMethod(), urlString: apiBuilder.getUrl(), parameters: params, onSuccess: onSuccess, onFailure: onFailure)
+    }
 }
 
 private class RestClient {

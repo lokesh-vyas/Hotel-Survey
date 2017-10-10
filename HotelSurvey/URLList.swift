@@ -13,7 +13,8 @@ enum Base:String {
 }
 
 struct URLEnum {
-    static var surveyDetailUrl = Base.baseUrl.rawValue + "/surveys.json"
+    static let surveyDetailUrl = Base.baseUrl.rawValue + "/surveys.json"
+    static let oAuthUrl = Base.baseUrl.rawValue + "/oauth/token"
 }
 
 enum MethodType:String {

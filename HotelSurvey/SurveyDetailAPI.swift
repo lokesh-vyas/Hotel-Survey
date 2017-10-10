@@ -16,7 +16,7 @@ final class SurveyDetailAPI {
     
     fileprivate var page = 1
     fileprivate var perPage = 10
-    fileprivate let token = GlobalVariables.accessToken
+    fileprivate let token = GlobalVariables.Session.authToken
     
     fileprivate let method:MethodType = MethodType.get
     fileprivate var baseURL = URLEnum.surveyDetailUrl
