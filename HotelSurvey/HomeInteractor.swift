@@ -59,6 +59,13 @@ class HomeInteractor {
             self.surveyDetailDelegate?.didGetAuthToken(success: false, error: error)
 
         }
+    }
+    
+    func isSessionAvailable() -> Bool {
         
+        if GlobalVariables.Session.authToken.isEmpty {
+            return false
+        }
+        return true;
     }
 }

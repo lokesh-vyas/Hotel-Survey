@@ -19,6 +19,8 @@ class HomeViewController: UIViewController, StoryboardHandler {
     @IBOutlet weak var pageControl:UIPageControl!
 
     //MARK: - iVars
+    fileprivate var initialPaginationCount:Int = 10
+    fileprivate var isPaginating:Bool = false
     fileprivate let homeInteractor:HomeInteractor = HomeInteractor()
     fileprivate var pageViewController:UIPageViewController!
     fileprivate var surveyData:[HotelSurvey] = [] {
@@ -41,7 +43,7 @@ class HomeViewController: UIViewController, StoryboardHandler {
         super.viewDidLoad()
         self.setNavigationBar()
         self.homeInteractor.surveyDetailDelegate = self
-        self.checkSessionAvailability()
+        self.makeAPICalls()
         self.pageControl.transform = CGAffineTransform(rotationAngle: .pi/2)
     }
 
@@ -51,8 +53,8 @@ class HomeViewController: UIViewController, StoryboardHandler {
         for view in self.pagingView.subviews {
             view.removeFromSuperview()
         }
-        self.surveyData.removeAll()
-        self.checkSessionAvailability()
+        self.resetValuesOnReload()
+        self.getSurveyData()
     }
     
     
@@ -64,13 +66,41 @@ class HomeViewController: UIViewController, StoryboardHandler {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    fileprivate func checkSessionAvailability() {
+    fileprivate func showSpinner() {
         self.spinner.startAnimating()
-        if GlobalVariables.Session.authToken.isEmpty {
-            homeInteractor.getOAuthData(username: "carlos@nimbl3.com", password: "antikera")
+        self.view.isUserInteractionEnabled = false
+    }
+    
+    fileprivate func hideSpinner() {
+        self.spinner.stopAnimating()
+        self.view.isUserInteractionEnabled = true
+    }
+    
+    fileprivate func resetValuesOnReload() {
+        self.isPaginating = false
+        self.surveyData.removeAll()
+        self.initialPaginationCount = 10
+    }
+    
+    fileprivate func makeAPICalls() {
+
+        if homeInteractor.isSessionAvailable() {
+            self.getOAuthData()
         } else {
-            homeInteractor.getSurveyDetailData(page: 1, perPage: 10)
+            self.getSurveyData()
         }
+    }
+
+    
+    //MARK: - Api Call's
+    fileprivate func getSurveyData() {
+        self.showSpinner()
+        homeInteractor.getSurveyDetailData(page: 1, perPage: initialPaginationCount)
+    }
+    
+    fileprivate func getOAuthData() {
+        self.showSpinner()
+        homeInteractor.getOAuthData(username: "carlos@nimbl3.com", password: "antikera")
     }
     
     
@@ -95,6 +125,16 @@ class HomeViewController: UIViewController, StoryboardHandler {
         homeContentViewController.hotelSelectionDelegate = self
         return homeContentViewController
         
+    }
+    
+    fileprivate func makePaginationCall(pageIndex:Int) {
+        if pageIndex == (self.surveyData.count - 2) {
+            if initialPaginationCount < GlobalVariables.MaxPaginationLimit {
+                self.isPaginating = true
+                initialPaginationCount += GlobalVariables.PaginationDifference
+                self.getSurveyData()
+            }
+        }
     }
 
 }
@@ -128,6 +168,7 @@ extension HomeViewController: UIPageViewControllerDataSource , UIPageViewControl
         if finished == true {
             if let vc = pageViewController.viewControllers?.first as? HomeContentViewController {
                 self.pageControl.currentPage = vc.pageIndex ?? 0
+                self.makePaginationCall(pageIndex: vc.pageIndex ?? 0)
             }
         }
     }
@@ -136,20 +177,22 @@ extension HomeViewController: UIPageViewControllerDataSource , UIPageViewControl
 extension HomeViewController : SurveyDetailProtocol {
     
     func didGetSurveyDetailData(success:Bool, surveyData:[HotelSurvey], error:String?) {
-        self.spinner.stopAnimating()
+        self.hideSpinner()
         if success {
             self.surveyData = surveyData
-            self.setupPagination()
+            if !isPaginating {
+                self.setupPagination()
+            }
         } else {
             DialogManager.sharedInstance.showAlert(onViewController: self, withText: "HotelSurvey", withMessage: error ?? "")
         }
     }
     func didGetAuthToken(success:Bool, error:String?) {
         
-        self.spinner.stopAnimating()
+        self.hideSpinner()
         
         if success == true {
-            self.checkSessionAvailability()
+            self.getSurveyData()
         } else {
             DialogManager.sharedInstance.showAlert(onViewController: self, withText: "HotelSurvey", withMessage: error ?? "")
         }

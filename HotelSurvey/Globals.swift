@@ -12,8 +12,11 @@ let USER_DEFAULTS = UserDefaults.standard
 
 struct GlobalVariables {
     
-    static var networkError:String = "Sorry! Something is not here. Try again later."
+    static let networkError:String = "Sorry! Something is not here. Try again later."
     
+    static let MaxPaginationLimit:Int = 20
+    static let PaginationDifference:Int = 5
+
     //MARK: - Session Data
     struct Session {
         static var authToken:String {
