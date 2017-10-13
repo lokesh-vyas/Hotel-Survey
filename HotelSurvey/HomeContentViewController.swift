@@ -34,7 +34,7 @@ class HomeContentViewController: UIViewController, StoryboardHandler {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = URL.init(string: hotelSurvey?.coverImageUrl ?? "") {
-            self.hotelCoverImageview.af_setImage(withURL:url, placeholderImage: nil, imageTransition: .crossDissolve(0.3))
+            self.hotelCoverImageview.af_setImage(withURL:url, placeholderImage: #imageLiteral(resourceName: "hotelplaceholder_image"), imageTransition: .crossDissolve(0.3))
         }
         self.hotelNameLabel.text = self.hotelSurvey?.title ?? ""
         self.hotelDescriptionLabel.text = self.hotelSurvey?.description ?? ""
