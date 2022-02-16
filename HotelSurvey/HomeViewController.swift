@@ -2,8 +2,8 @@
 //  HomeViewController.swift
 //  HotelSurvey
 //
-//  Created by Mayank on 09/10/17.
-//  Copyright © 2017 Mayank. All rights reserved.
+//  Created by Lokesh on 09/10/17.
+//  Copyright © 2017 Lokesh. All rights reserved.
 //
 
 import UIKit
